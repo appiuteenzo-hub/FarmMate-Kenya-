@@ -1,79 +1,1250 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-      <title>FarmMate Kenya</title>
+<meta charset="UTF-8">
 
-        <style>
-            * {
-                  box-sizing: border-box;
-                        margin: 0;
-                              padding: 0;
-                                    font-family: Arial, sans-serif;
-                                        }
+<!-- FARM MATE KENYA
+     Mobile-friendly agricultural application
+     First complete foundation version -->
 
-                                            body {
-                                                  background: #f4f8f3;
-                                                        color: #17351f;
-                                                            }
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-                                                                .app {
-                                                                      max-width: 500px;
-                                                                            margin: auto;
-                                                                                  min-height: 100vh;
-                                                                                        background: white;
-                                                                                            }
+<title>FarmMate Kenya</title>
 
-                                                                                                .header {
-                                                                                                      background: linear-gradient(135deg, #176b35, #2e9d50);
-                                                                                                            color: white;
-                                                                                                                  padding: 28px 22px 35px;
-                                                                                                                        border-radius: 0 0 28px 28px;
-                                                                                                                            }
+<style>
 
-                                                                                                                                .logo {
-                                                                                                                                      font-size: 28px;
-                                                                                                                                            font-weight: bold;
-                                                                                                                                                }
+/* =====================================================
+   FARM MATE KENYA - MAIN DESIGN
+   ===================================================== */
 
-                                                                                                                                                    .tagline {
-                                                                                                                                                          margin-top: 7px;
-                                                                                                                                                                font-size: 14px;
-                                                                                                                                                                      opacity: 0.9;
-                                                                                                                                                                          }
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
 
-                                                                                                                                                                              .welcome {
-                                                                                                                                                                                    margin-top: 28px;
-                                                                                                                                                                                          font-size: 22px;
-                                                                                                                                                                                                font-weight: bold;
-                                                                                                                                                                                                    }
+body {
+  font-family: Arial, sans-serif;
+  background: #eef7ef;
+  color: #18351f;
+}
 
-                                                                                                                                                                                                        .location {
-                                                                                                                                                                                                              margin-top: 6px;
-                                                                                                                                                                                                                    font-size: 14px;
-                                                                                                                                                                                                                          opacity: 0.9;
-                                                                                                                                                                                                                              }
+.app {
+  max-width: 520px;
+  margin: auto;
+  min-height: 100vh;
+  background: white;
+}
 
-                                                                                                                                                                                                                                  .content {
-                                                                                                                                                                                                                                        padding: 22px;
-                                                                                                                                                                                                                                            }
+/* =====================================================
+   HEADER
+   ===================================================== */
 
-                                                                                                                                                                                                                                                .section-title {
-                                                                                                                                                                                                                                                      font-size: 20px;
-                                                                                                                                                                                                                                                            font-weight: bold;
-                                                                                                                                                                                                                                                                  margin-bottom: 15px;
-                                                                                                                                                                                                                                                                      }
+.header {
+  background: linear-gradient(135deg, #126b35, #2e9d50);
+  color: white;
+  padding: 25px 20px 30px;
+  border-radius: 0 0 28px 28px;
+}
 
-                                                                                                                                                                                                                                                                          .cards {
-                                                                                                                                                                                                                                                                                display: grid;
-                                                                                                                                                                                                                                                                                      grid-template-columns: 1fr 1fr;
-                                                                                                                                                                                                                                                                                            gap: 14px;
-                                                                                                                                                                                                                                                                                                }
+.logo {
+  font-size: 27px;
+  font-weight: bold;
+}
 
-                                                                                                                                                                                                                                                                                                    .card {
-                                                                                                                                                                                                                                                                                                          background: #f1f8f2;
-                                                                                                                                                                                                                                                                                                                padding: 20px 15px;
+.tagline {
+  margin-top: 5px;
+  font-size: 13px;
+  opacity: .9;
+}
+
+.welcome {
+  margin-top: 25px;
+  font-size: 21px;
+  font-weight: bold;
+}
+
+.subtitle {
+  margin-top: 7px;
+  font-size: 13px;
+}
+
+/* =====================================================
+   GENERAL CONTENT
+   ===================================================== */
+
+.content {
+  padding: 20px;
+}
+
+h2 {
+  font-size: 18px;
+  margin-bottom: 15px;
+}
+
+.page {
+  display: none;
+}
+
+.page.active {
+  display: block;
+}
+
+/* =====================================================
+   HOME DASHBOARD
+   ===================================================== */
+
+.grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 12px;
+}
+
+.card {
+  background: #f2f8f3;
+  border: 1px solid #dcecdf;
+  border-radius: 15px;
+  padding: 17px 14px;
+  cursor: pointer;
+}
+
+.card:active {
+  transform: scale(.98);
+}
+
+.icon {
+  font-size: 27px;
+  margin-bottom: 8px;
+}
+
+.card h3 {
+  font-size: 15px;
+  margin-bottom: 5px;
+}
+
+.card p {
+  font-size: 11px;
+  line-height: 1.4;
+  color: #667169;
+}
+
+/* =====================================================
+   FARMER TIP
+   ===================================================== */
+
+.tip {
+  margin-top: 18px;
+  padding: 16px;
+  background: #fff8d9;
+  border-left: 4px solid #e0b800;
+  border-radius: 12px;
+}
+
+.tip strong {
+  display: block;
+  margin-bottom: 7px;
+}
+
+.tip p {
+  font-size: 12px;
+  line-height: 1.5;
+  color: #665d36;
+}
+
+/* =====================================================
+   BUTTONS
+   ===================================================== */
+
+.main-btn,
+.save-btn {
+  width: 100%;
+  border: 0;
+  background: #176b35;
+  color: white;
+  padding: 14px;
+  border-radius: 11px;
+  margin-top: 18px;
+  font-weight: bold;
+  font-size: 14px;
+}
+
+.back-btn {
+  border: 0;
+  background: #e9f4eb;
+  color: #176b35;
+  padding: 9px 13px;
+  border-radius: 9px;
+  margin-bottom: 16px;
+  font-weight: bold;
+}
+
+/* =====================================================
+   INFORMATION CARDS
+   ===================================================== */
+
+.list {
+  display: flex;
+  flex-direction: column;
+  gap: 11px;
+}
+
+.item {
+  padding: 16px;
+  background: #f4f9f4;
+  border-radius: 12px;
+  border: 1px solid #e0ece1;
+}
+
+.item h3 {
+  font-size: 15px;
+  margin-bottom: 7px;
+}
+
+.item p {
+  font-size: 12px;
+  line-height: 1.55;
+  color: #59655c;
+}
+
+/* =====================================================
+   FORMS
+   ===================================================== */
+
+input,
+select {
+  width: 100%;
+  padding: 12px;
+  margin: 6px 0;
+  border: 1px solid #ccd9ce;
+  border-radius: 9px;
+  font-size: 14px;
+}
+
+.record {
+  display: flex;
+  justify-content: space-between;
+  padding: 12px;
+  margin-top: 8px;
+  background: #f3f8f3;
+  border-radius: 9px;
+  font-size: 13px;
+}
+
+/* =====================================================
+   FOOTER
+   ===================================================== */
+
+footer {
+  text-align: center;
+  padding: 25px 10px;
+  color: #7a847c;
+  font-size: 11px;
+  border-top: 1px solid #eee;
+  margin-top: 20px;
+}
+
+</style>
+</head>
+
+<body>
+
+<div class="app">
+
+<!-- ===================================================
+     HOME / MAIN DASHBOARD
+     =================================================== -->
+
+<section id="home" class="page active">
+
+<header class="header">
+
+<div class="logo">🌱 FarmMate</div>
+
+<div class="tagline">
+Smart farming for Kenyan farmers
+</div>
+
+<div class="welcome">
+Welcome, Farmer 👋
+</div>
+
+<div class="subtitle">
+🇰🇪 FarmMate Kenya
+</div>
+
+</header>
+
+<div class="content">
+
+<h2>What do you need?</h2>
+
+<div class="grid">
+
+<div class="card" onclick="showPage('crops')">
+<div class="icon">🌾</div>
+<h3>Crops</h3>
+<p>Crop guides, planting and harvesting information.</p>
+</div>
+
+<div class="card" onclick="showPage('livestock')">
+<div class="icon">🐄</div>
+<h3>Livestock</h3>
+<p>Basic livestock management information.</p>
+</div>
+
+<div class="card" onclick="showPage('weather')">
+<div class="icon">🌦️</div>
+<h3>Weather</h3>
+<p>Weather planning for farming activities.</p>
+</div>
+
+<div class="card" onclick="showPage('market')">
+<div class="icon">💰</div>
+<h3>Market</h3>
+<p>Farm produce and market information.</p>
+</div>
+
+<div class="card" onclick="showPage('records')">
+<div class="icon">📒</div>
+<h3>Farm Records</h3>
+<p>Record your farm activities and expenses.</p>
+</div>
+
+<div class="card" onclick="showPage('accounting')">
+<div class="icon">🧮</div>
+<h3>Accounting</h3>
+<p>Track farm income, expenses and balance.</p>
+</div>
+
+<div class="card" onclick="showPage('tips')">
+<div class="icon">💡</div>
+<h3>Farm Tips</h3>
+<p>Useful farming practices and ideas.</p>
+</div>
+
+<div class="card" onclick="showPage('farm')">
+<div class="icon">👨‍🌾</div>
+<h3>My Farm</h3>
+<p>Manage your farmer and farm information.</p>
+</div>
+
+</div>
+
+<div class="tip">
+
+<strong>💡 Farmer's Tip</strong>
+
+<p>
+Healthy soil is the foundation of a productive farm.
+Maintain soil fertility and use practices suitable for
+your crop and local conditions.
+</p>
+
+</div>
+
+<button class="main-btn" onclick="showPage('farm')">
+🚜 Manage My Farm
+</button>
+
+</div>
+
+</section>
+
+
+<!-- ===================================================
+     CROPS
+     =================================================== -->
+
+<section id="crops" class="page">
+
+<header class="header">
+
+<div class="logo">🌾 Crops</div>
+
+<div class="tagline">
+Crop information for Kenya
+</div>
+
+</header>
+
+<div class="content">
+
+<button class="back-btn" onclick="showPage('home')">
+← Home
+</button>
+
+<h2>Crop Guides</h2>
+
+<div class="list">
+
+<div class="item">
+<h3>🌽 Maize</h3>
+<p>
+Use quality seed and plant when suitable moisture is available.
+Maintain proper spacing, control weeds and manage soil fertility.
+Monitor regularly for pests and diseases.
+</p>
+</div>
+
+<div class="item">
+<h3>🫘 Beans</h3>
+<p>
+Use healthy seed and well-drained soil. Control weeds early and
+monitor the crop for pests and diseases.
+</p>
+</div>
+
+<div class="item">
+<h3>🥔 Irish Potatoes</h3>
+<p>
+Use certified clean planting material where available.
+Prepare loose, well-drained soil and avoid waterlogging.
+</p>
+</div>
+
+<div class="item">
+<h3>🍅 Tomatoes</h3>
+<p>
+Use healthy seedlings, maintain adequate moisture and monitor
+regularly for pests and diseases. Support plants where appropriate.
+</p>
+</div>
+
+<div class="item">
+<h3>🥬 Vegetables</h3>
+<p>
+Select varieties suitable for your area and target market.
+Maintain soil fertility, moisture and regular pest monitoring.
+</p>
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+
+<!-- ===================================================
+     LIVESTOCK
+     =================================================== -->
+
+<section id="livestock" class="page">
+
+<header class="header">
+
+<div class="logo">🐄 Livestock</div>
+
+<div class="tagline">
+Livestock management information
+</div>
+
+</header>
+
+<div class="content">
+
+<button class="back-btn" onclick="showPage('home')">
+← Home
+</button>
+
+<h2>Livestock</h2>
+
+<div class="list">
+
+<div class="item">
+<h3>🐄 Dairy Cattle</h3>
+<p>
+Provide clean water, balanced feed, suitable housing and
+regular health monitoring. Keep reliable farm records.
+</p>
+</div>
+
+<div class="item">
+<h3>🐐 Goats</h3>
+<p>
+Provide adequate feed, clean water and shelter.
+Monitor animals regularly and seek veterinary assistance
+when animals show signs of illness.
+</p>
+</div>
+
+<div class="item">
+<h3>🐔 Poultry</h3>
+<p>
+Maintain clean housing, suitable feed, clean water and
+appropriate disease prevention practices.
+</p>
+</div>
+
+<div class="item">
+<h3>🐑 Sheep</h3>
+<p>
+Provide suitable grazing or feed, clean water and shelter.
+Regularly monitor body condition and general health.
+</p>
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+
+<!-- ===================================================
+     WEATHER
+     NOTE: LIVE WEATHER API WILL BE CONNECTED LATER
+     =================================================== -->
+
+<section id="weather" class="page">
+
+<header class="header">
+
+<div class="logo">🌦️ Weather</div>
+
+<div class="tagline">
+Weather planning
+</div>
+
+</header>
+
+<div class="content">
+
+<button class="back-btn" onclick="showPage('home')">
+← Home
+</button>
+
+<h2>Weather</h2>
+
+<div class="item">
+
+<h3>🌧️ Rainfall</h3>
+
+<p>
+Rainfall affects planting, crop growth, harvesting and
+soil moisture. Avoid unnecessary field operations during
+heavy rainfall.
+</p>
+
+</div>
+
+<br>
+
+<div class="item">
+
+<h3>☀️ Dry Conditions</h3>
+
+<p>
+During dry periods, consider moisture conservation practices
+such as mulching and appropriate irrigation where available.
+</p>
+
+</div>
+
+<br>
+
+<div class="item">
+
+<h3>🌡️ Weather Planning</h3>
+
+<p>
+Before spraying, planting or harvesting, check a reliable
+weather forecast for your location.
+</p>
+
+</div>
+
+<div class="tip">
+
+<strong>🚧 Coming Soon</strong>
+
+<p>
+FarmMate will later connect to a live weather service so
+farmers can receive location-based weather information.
+</p>
+
+</div>
+
+</div>
+
+</section>
+
+
+<!-- ===================================================
+     MARKET
+     NOTE: LIVE MARKET PRICES WILL BE CONNECTED LATER
+     =================================================== -->
+
+<section id="market" class="page">
+
+<header class="header">
+
+<div class="logo">💰 Market</div>
+
+<div class="tagline">
+Market information
+</div>
+
+</header>
+
+<div class="content">
+
+<button class="back-btn" onclick="showPage('home')">
+← Home
+</button>
+
+<h2>Farm Produce</h2>
+
+<div class="list">
+
+<div class="item">
+<h3>🌽 Maize</h3>
+<p>
+Compare prices from different buyers and consider transport,
+quality and other selling costs.
+</p>
+</div>
+
+<div class="item">
+<h3>🫘 Beans</h3>
+<p>
+Compare buyer offers before selling and consider the quality
+and quantity of your produce.
+</p>
+</div>
+
+<div class="item">
+<h3>🥔 Potatoes</h3>
+<p>
+Consider grading, transport, storage and buyer requirements
+when comparing offers.
+</p>
+</div>
+
+</div>
+
+<div class="tip">
+
+<strong>🚧 Coming Soon</strong>
+
+<p>
+FarmMate will later connect to reliable market-price data.
+</p>
+
+</div>
+
+</div>
+
+</section>
+
+
+<!-- ===================================================
+     FARM RECORDS
+     DATA IS STORED LOCALLY ON THE DEVICE
+     =================================================== -->
+
+<section id="records" class="page">
+
+<header class="header">
+
+<div class="logo">📒 Farm Records</div>
+
+<div class="tagline">
+Keep your farm activities organized
+</div>
+
+</header>
+
+<div class="content">
+
+<button class="back-btn" onclick="showPage('home')">
+← Home
+</button>
+
+<h2>Add Farm Activity</h2>
+
+<input
+id="recordName"
+placeholder="Activity e.g. Bought fertilizer">
+
+<input
+id="recordAmount"
+type="number"
+placeholder="Amount / cost">
+
+<button class="save-btn" onclick="saveRecord()">
+Save Record
+</button>
+
+<div id="recordList"></div>
+
+</div>
+
+</section>
+
+
+<!-- ===================================================
+     ACCOUNTING
+     =================================================== -->
+
+<section id="accounting" class="page">
+
+<header class="header">
+
+<div class="logo">🧮 Accounting</div>
+
+<div class="tagline">
+Track farm income and expenses
+</div>
+
+</header>
+
+<div class="content">
+
+<button class="back-btn" onclick="showPage('home')">
+← Home
+</button>
+
+<h2>Farm Money</h2>
+
+<input
+id="moneyDescription"
+placeholder="Description">
+
+<input
+id="moneyAmount"
+type="number"
+placeholder="Amount">
+
+<select id="moneyType">
+
+<option value="expense">
+Expense
+</option>
+
+<option value="income">
+Income
+</option>
+
+</select>
+
+<button class="save-btn" onclick="saveMoney()">
+Save Transaction
+</button>
+
+<div id="moneyList"></div>
+
+<div class="tip">
+
+<strong>💰 Balance</strong>
+
+<p id="balance">
+KES 0
+</p>
+
+</div>
+
+</div>
+
+</section>
+
+
+<!-- ===================================================
+     FARMING TIPS
+     =================================================== -->
+
+<section id="tips" class="page">
+
+<header class="header">
+
+<div class="logo">💡 Farm Tips</div>
+
+<div class="tagline">
+Practical farming ideas
+</div>
+
+</header>
+
+<div class="content">
+
+<button class="back-btn" onclick="showPage('home')">
+← Home
+</button>
+
+<div class="list">
+
+<div class="item">
+<h3>🌱 Soil Health</h3>
+<p>
+Maintain soil fertility through appropriate organic matter,
+crop rotation and suitable nutrient management.
+</p>
+</div>
+
+<div class="item">
+<h3>💧 Water Management</h3>
+<p>
+Use water efficiently and protect soil moisture where possible.
+</p>
+</div>
+
+<div class="item">
+<h3>🐛 Pest Monitoring</h3>
+<p>
+Inspect crops regularly so problems can be identified early.
+</p>
+</div>
+
+<div class="item">
+<h3>📒 Record Keeping</h3>
+<p>
+Record expenses, activities, harvests and sales to understand
+how your farm is performing.
+</p>
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+
+<!-- ===================================================
+     MY FARM
+     =================================================== -->
+
+<section id="farm" class="page">
+
+<header class="header">
+
+<div class="logo">👨‍🌾 My Farm</div>
+
+<div class="tagline">
+Your farm profile
+</div>
+
+</header>
+
+<div class="content">
+
+<button class="back-btn" onclick="showPage('home')">
+← Home
+</button>
+
+<h2>Farm Information</h2>
+
+<input
+id="farmerName"
+placeholder="Farmer name">
+
+<input
+id="farmName"
+placeholder="Farm name">
+
+<input
+id="location"
+placeholder="County / location">
+
+<select id="farmType">
+
+<option>Crop farming</option>
+<option>Livestock farming</option>
+<option>Mixed farming</option>
+<option>Horticulture</option>
+
+</select>
+
+<button class="save-btn" onclick="saveFarm()">
+Save Farm Information
+</button>
+
+<div class="tip">
+
+<strong>🌱 FarmMate</strong>
+
+<p>
+Your farm profile will help us personalize future FarmMate
+features.
+</p>
+
+</div>
+
+</div>
+
+</section>
+
+
+<!-- ===================================================
+     SETTINGS
+     =================================================== -->
+
+<section id="settings" class="page">
+
+<header class="header">
+
+<div class="logo">⚙️ Settings</div>
+
+<div class="tagline">
+FarmMate preferences
+</div>
+
+</header>
+
+<div class="content">
+
+<button class="back-btn" onclick="showPage('home')">
+← Home
+</button>
+
+<h2>Settings</h2>
+
+<div class="item">
+
+<h3>🌱 FarmMate Kenya</h3>
+
+<p>
+Version 1.0 Foundation
+</p>
+
+</div>
+
+<br>
+
+<div class="item">
+
+<h3>🇰🇪 Country</h3>
+
+<p>
+Kenya
+</p>
+
+</div>
+
+<br>
+
+<div class="item">
+
+<h3>☁️ Future Features</h3>
+
+<p>
+Online accounts, cloud backup, live weather,
+market prices and notifications will be connected
+in future development.
+</p>
+
+</div>
+
+</div>
+
+</section>
+
+
+<!-- ===================================================
+     FOOTER
+     =================================================== -->
+
+<footer>
+
+<strong>🌱 FarmMate Kenya</strong>
+
+<br><br>
+
+Smart farming tools for Kenyan farmers 🇰🇪
+
+</footer>
+
+</div>
+
+
+<script>
+
+/* =====================================================
+   FARM MATE JAVASCRIPT
+   This controls navigation and saved information.
+   ===================================================== */
+
+
+/* -----------------------------------------------------
+   PAGE NAVIGATION
+   ----------------------------------------------------- */
+
+function showPage(pageId) {
+
+  document
+  .querySelectorAll(".page")
+  .forEach(function(page) {
+
+    page.classList.remove("active");
+
+  });
+
+  document
+  .getElementById(pageId)
+  .classList.add("active");
+
+  window.scrollTo(0, 0);
+
+}
+
+
+/* -----------------------------------------------------
+   FARM RECORDS
+   ----------------------------------------------------- */
+
+function saveRecord() {
+
+  let name =
+  document.getElementById("recordName").value;
+
+  let amount =
+  document.getElementById("recordAmount").value;
+
+  if (!name) {
+
+    alert("Please enter a farm activity.");
+
+    return;
+
+  }
+
+  let records =
+  JSON.parse(
+    localStorage.getItem("farmRecords") || "[]"
+  );
+
+  records.push({
+
+    name: name,
+    amount: amount || "0"
+
+  });
+
+  localStorage.setItem(
+    "farmRecords",
+    JSON.stringify(records)
+  );
+
+  document.getElementById("recordName").value = "";
+
+  document.getElementById("recordAmount").value = "";
+
+  loadRecords();
+
+}
+
+
+function loadRecords() {
+
+  let records =
+  JSON.parse(
+    localStorage.getItem("farmRecords") || "[]"
+  );
+
+  let list =
+  document.getElementById("recordList");
+
+  list.innerHTML = "";
+
+  records.forEach(function(record) {
+
+    let div =
+    document.createElement("div");
+
+    div.className = "record";
+
+    div.innerHTML =
+    "<span>📌 " +
+    record.name +
+    "</span>" +
+    "<strong>KES " +
+    record.amount +
+    "</strong>";
+
+    list.appendChild(div);
+
+  });
+
+}
+
+
+/* -----------------------------------------------------
+   FARM ACCOUNTING
+   ----------------------------------------------------- */
+
+function saveMoney() {
+
+  let description =
+  document.getElementById(
+    "moneyDescription"
+  ).value;
+
+  let amount =
+  Number(
+    document.getElementById(
+      "moneyAmount"
+    ).value
+  );
+
+  let type =
+  document.getElementById(
+    "moneyType"
+  ).value;
+
+  if (!description || !amount) {
+
+    alert("Enter the transaction details.");
+
+    return;
+
+  }
+
+  let transactions =
+  JSON.parse(
+    localStorage.getItem(
+      "farmTransactions"
+    ) || "[]"
+  );
+
+  transactions.push({
+
+    description: description,
+    amount: amount,
+    type: type
+
+  });
+
+  localStorage.setItem(
+    "farmTransactions",
+    JSON.stringify(transactions)
+  );
+
+  document.getElementById(
+    "moneyDescription"
+  ).value = "";
+
+  document.getElementById(
+    "moneyAmount"
+  ).value = "";
+
+  loadMoney();
+
+}
+
+
+function loadMoney() {
+
+  let transactions =
+  JSON.parse(
+    localStorage.getItem(
+      "farmTransactions"
+    ) || "[]"
+  );
+
+  let list =
+  document.getElementById(
+    "moneyList"
+  );
+
+  list.innerHTML = "";
+
+  let balance = 0;
+
+  transactions.forEach(function(transaction) {
+
+    if (transaction.type === "income") {
+
+      balance += transaction.amount;
+
+    } else {
+
+      balance -= transaction.amount;
+
+    }
+
+    let div =
+    document.createElement("div");
+
+    div.className = "record";
+
+    div.innerHTML =
+    "<span>" +
+    transaction.description +
+    "</span>" +
+    "<strong>" +
+    (transaction.type === "income"
+      ? "+ "
+      : "- ") +
+    "KES " +
+    transaction.amount +
+    "</strong>";
+
+    list.appendChild(div);
+
+  });
+
+  document.getElementById(
+    "balance"
+  ).textContent =
+  "KES " + balance.toLocaleString();
+
+}
+
+
+/* -----------------------------------------------------
+   FARM PROFILE
+   ----------------------------------------------------- */
+
+function saveFarm() {
+
+  let farm = {
+
+    farmer:
+    document.getElementById(
+      "farmerName"
+    ).value,
+
+    farm:
+    document.getElementById(
+      "farmName"
+    ).value,
+
+    location:
+    document.getElementById(
+      "location"
+    ).value,
+
+    type:
+    document.getElementById(
+      "farmType"
+    ).value
+
+  };
+
+  localStorage.setItem(
+    "farmProfile",
+    JSON.stringify(farm)
+  );
+
+  alert(
+    "Farm information saved successfully! 🌱"
+  );
+
+}
+
+
+/* -----------------------------------------------------
+   LOAD SAVED DATA WHEN APP OPENS
+   ----------------------------------------------------- */
+
+loadRecords();
+
+loadMoney();
+
+</script>
+
+</body>
+  </html>                                                          padding: 20px 15px;
                                                                                                                                                                                                                                                                                                                       border-radius: 18px;
                                                                                                                                                                                                                                                                                                                             border: 1px solid #e0eee2;
                                                                                                                                                                                                                                                                                                                                   cursor: pointer;
