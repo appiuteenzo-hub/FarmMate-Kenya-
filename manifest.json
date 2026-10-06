@@ -1,22 +1,26 @@
 {
   "name": "FarmMate-Kenya",
   "short_name": "FarmMate",
-  "description": "FarmMate-Kenya agricultural information and farm management app.",
-  "start_url": "./",
+  "id": "https://appiuteenzo-hub.github.io/FarmMate-Kenya-/",
+  "start_url": "https://appiuteenzo-hub.github.io/FarmMate-Kenya-/",
+  "scope": "https://appiuteenzo-hub.github.io/FarmMate-Kenya-/",
   "display": "standalone",
   "background_color": "#f1f8f3",
   "theme_color": "#16823b",
+  "description": "FarmMate-Kenya agricultural information and farm management app.",
   "orientation": "portrait",
   "icons": [
     {
-      "src": "icon-192.png",
+      "src": "https://appiuteenzo-hub.github.io/FarmMate-Kenya-/icon-192.png",
       "sizes": "192x192",
-      "type": "image/png"
+      "type": "image/png",
+      "purpose": "any maskable"
     },
     {
-      "src": "icon-512.png",
+      "src": "https://appiuteenzo-hub.github.io/FarmMate-Kenya-/icon-512.png",
       "sizes": "512x512",
-      "type": "image/png"
+      "type": "image/png",
+      "purpose": "any maskable"
     }
   ]
 }
